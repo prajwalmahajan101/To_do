@@ -4,6 +4,19 @@
         <% for (task of rtasks) {%>
             <div class="task" style="background-color: <%= task.color%>">
                 <%= task.content %>
+
+                
+                
+                <a style="text-decoration:none;"  href="tasks/complete/<%= task._id%>">
+                    <i class="fa-solid fa-check fa-sm"></i>    
+                </a>
+
+                <a  style="text-decoration:none;" href="tasks/delete/<%= task._id%>">
+                    <i class="fa-solid fa-xmark fa-sm"></i>
+                </a>
+
+
+
             </div>
             <% } %>
     </div>
