@@ -1,0 +1,15 @@
+.task_list{
+    width: 100%;
+    background-color: aquamarine;
+    padding:3px 3px 3px 3px;
+    .task{
+        width: 90%;
+        background-color: aqua;
+        color: brown;
+        border: 2px solid;
+        margin: 3px auto;
+        box-shadow: 10px 10px 8px #888888;
+        font-size: 6vh;
+    }
+
+}

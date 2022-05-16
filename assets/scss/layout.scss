@@ -3,6 +3,7 @@ body{
     /* text-align: center; */
 
     #layout-main{
-        height: 100%;
+      height: fit-content;
+      min-height: 77%; 
     }
 }

@@ -51,19 +51,6 @@ module.exports.signin = (req,res) =>{
 }
 };
 
-module.exports.signup = (req,res) =>{
-    // console.log(req.isAuthenticated());
-
-    if(req.isAuthenticated()){
-        return res.redirect('/users/profile');
-    }
-    else{
-    return res.render('user_sign_up',{
-        title:'Sign Up',
-    });
-}
-};
-
 
 module.exports.create = (req,res) =>{
     if(req.body.password!= req.body.confirm_password) return res.redirect("back");
@@ -93,5 +80,5 @@ module.exports.createSession = (req,res) =>{
 module.exports.destorySession = (req,res)=>{
     req.logout();
     req.flash('success','Logged out Sucessfully !');
-    return res.redirect('/');
+    return res.redirect('/users/sign-in');
 }

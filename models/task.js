@@ -14,6 +14,14 @@ const taskSchema = new mongoose.Schema({
         type: Boolean,
         required:true
     },
+    day:{
+        type:Date,
+        required:true,
+    },
+    priority:{
+        type:String,
+        required:true,
+    }
     
 
 }, {
