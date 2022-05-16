@@ -2,6 +2,7 @@
     width: 100%;
     background-color: aquamarine;
     padding:3px 3px 3px 3px;
+    
     .task{
         width: 90%;
         background-color: aqua;
@@ -10,6 +11,19 @@
         margin: 3px auto;
         box-shadow: 10px 10px 8px #888888;
         font-size: 6vh;
+        display: flex;
+        justify-content: space-between;
+        *{
+            margin: 0 auto;
+            padding-top: 5px;
+        }
     }
+
+
+}
+
+.card{
+    border: 2px solid;
+    box-shadow: 10px 10px 8px #888888;
 
 }

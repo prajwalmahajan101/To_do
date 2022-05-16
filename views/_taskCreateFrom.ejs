@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
-        <div class="col-6" style="border:2px solid; margin: 10px auto;">
+        <div class="col-6 card" style="border:2px solid; margin: 10px auto;">
             <form action="/tasks/create" method="POST">
                 <div class="mb-3">
                     <label for="task" class="form-label">Task</label>
@@ -11,7 +11,8 @@
                     <input type="date" class="form-control" id="when" name="day" />
                 </div>
                 <label for="p" class="form-label">Priority</label>
-                <select id="p" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="priority">
+                <select id="p" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                    name="priority">
                     <option value="1">One - As Lowest Priority</option>
                     <option value="2">Two</option>
                     <option value="3">Three - As Highest Priority</option>
