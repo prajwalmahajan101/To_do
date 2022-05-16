@@ -1,0 +1,11 @@
+<%if (tasks.length>0){%>
+
+    <div class="task_list">
+        <% for (task of tasks) {%>
+            <div class="task" style="background-color: <%= task.color%>">
+                <%= task.content %>
+            </div>
+            <% } %>
+    </div>
+
+    <% } %>

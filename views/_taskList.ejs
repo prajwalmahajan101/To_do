@@ -17,50 +17,20 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                             aria-labelledby="list-home-list">
-                            <%if (tasks.length>0){%>
-
-                                <div class="task_list">
-                                    <% for (task of tasks) {%>
-                                        <div class="task" style="background-color: <%= task.color%>">
-                                            <%= task.content %>
-                                        </div>
-                                        <% } %>
-                                </div>
-
-                                <% } %>
+                            <%- include('_allTaskList'); %>
 
                         </div>
                         <div class="tab-pane fade" id="list-profile" role="tabpanel"
                             aria-labelledby="list-profile-list">
-                            <%if (rtasks.length>0){%>
-
-                                <div class="task_list">
-                                    <% for (task of rtasks) {%>
-                                        <div class="task" style="background-color: <%= task.color%>">
-                                            <%= task.content %>
-                                        </div>
-                                        <% } %>
-                                </div>
-
-                                <% } %>
-
+                           
+                            <%- include('_remainingTaskList'); %>
 
                         </div>
                         <div class="tab-pane fade" id="list-messages" role="tabpanel"
                             aria-labelledby="list-messages-list">
 
-                            <%if (ctasks.length>0){%>
-
-                                <div class="task_list">
-                                    <% for (task of ctasks) {%>
-                                        <div class="task" style="background-color: <%= task.color%>">
-                                            <%= task.content %>
-                                        </div>
-                                        <% } %>
-                                </div>
-
-                                <% } %>
-
+                           
+                            <%- include('_completedTaskList'); %>
 
 
                         </div>
