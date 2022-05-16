@@ -3,33 +3,40 @@
     <div class="task_list">
         <% for (task of rtasks) {%>
             <div class="task" style="background-color: <%= task.color%>">
-                <%= task.content %>
+               
 
-                    <div class="expense-date">
-                        <div class="expense-date__month">
-                            <%= task.month%>
-                        </div>
-                        <div class="expense-date__year">
-                            <%= task.year%>
-                        </div>
-                        <div class="expense-date__day">
-                            <%= task.dayName%>
-                        </div>
+                <div class="expense-date">
+                    <div class="expense-date__month">
+                        <%= task.month%>
                     </div>
-
-                    <a style="text-decoration:none;" href="tasks/delete/<%= task._id%>">
-                        <i class="fa-solid fa-xmark fa-sm"></i>
-                    </a>
-
-
-                    <% if (!task.isCompleted) {%>
-                        <a style="text-decoration:none;" href="tasks/complete/<%= task._id%>">
-                            <i class="fa-solid fa-check fa-sm"></i>
-                        </a>
-                        <% } %>
-
+                    <div class="expense-date__year">
+                        <%= task.year%>
+                    </div>
+                    <div class="expense-date__day">
+                        <%= task.dayName%>
+                    </div>
+                </div>
+                <div class="task-description text-center">
+                    <%= task.content %>
                     
+                </div>
 
+                <div class="task-button">
+
+                <% if (!task.isCompleted) {%>
+                    <a style="text-decoration:none;"  href="tasks/complete/<%= task._id%>">
+                        <i class="fa-solid fa-check fa-sm"></i>
+                    </a>
+                <% } %>
+
+                <a style="text-decoration:none;" href="tasks/delete/<%= task._id%>">
+                    <i class="fa-solid fa-xmark fa-sm"></i>
+                </a>
+
+
+
+                
+            </div>
 
 
             </div>

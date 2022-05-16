@@ -1,19 +1,27 @@
-.task_list{
+.task_list {
     width: 100%;
     background-color: aquamarine;
-    padding:3px 3px 3px 3px;
-    
-    .task{
+    padding: 3px 3px 3px 3px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    margin-bottom: 5px;
+
+    .task {
         width: 90%;
         background-color: aqua;
         color: brown;
         border: 2px solid;
-        margin: 3px auto;
+        margin: 10px 10px;
         box-shadow: 10px 10px 8px #888888;
-        font-size: 6vh;
+        font-size: 3.5vw;
         display: flex;
         justify-content: space-between;
-        *{
+        word-break: break-all;
+        // @media (max-width: 768px) {
+        //     font-size: large;
+        // }
+
+        * {
             margin: 0 auto;
             padding-top: 5px;
         }
@@ -22,7 +30,7 @@
 
 }
 
-.card{
+.card {
     border: 2px solid;
     box-shadow: 10px 10px 8px #888888;
 

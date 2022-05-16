@@ -1,77 +1,80 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="lg-col-10 mt-2">
+  <div class="row justify-content-center">
+    <div class="col-9 mt-2">
+      <h2 class="text-center mt-2 mb-2">Today's Task</h2>
 
-            <h2 class="text-center mt-2 mb-2">
-                Today's Task
-            </h2>
+      <div class="card">
+        <h3 class="text-center mt-2 mb-2">Today's Task Progress</h3>
 
-            <div class="card">
+        <div class="progress m-3" style="height: 20px">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: <%= tcomPer%>%"
+            aria-valuenow="<%= tcomPer %>"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            <%= tcomPer%>%
+          </div>
+        </div>
 
-                <h3 class="text-center mt-2 mb-2">
-                    Today's Task Progress
-                </h3>
+        <%if (ttasks.length>0){%>
+        <div class="container justify-content-center">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <div class="task_list row">
+                <% for (task of ttasks) {%>
+                <div
+                  class="task"
+                  style="background-color: <%= task.color%>">
 
-                <div class="progress m-3" style="height: 20px;">
-                    <div class="progress-bar" role="progressbar" style="width: <%= tcomPer%>%;"
-                        aria-valuenow="<%= tcomPer %>" aria-valuemin="0" aria-valuemax="100">
-                        <%= tcomPer%>%
+
+                  <div class="expense-date">
+                    <div class="expense-date__month">
+                        <%= task.month%>
+                    </div>
+                    <div class="expense-date__year">
+                        <%= task.year%>
+                    </div>
+                    <div class="expense-date__day">
+                        <%= task.dayName%>
                     </div>
                 </div>
+                <div class="task-description text-center">
+                    <%= task.content %>
+                    
+                </div>
 
+                <div class="task-button">
 
-                <%if (ttasks.length>0){%>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-10">
+                <% if (!task.isCompleted) {%>
+                    <a style="text-decoration:none;"  href="tasks/complete/<%= task._id%>">
+                        <i class="fa-solid fa-check fa-sm"></i>
+                    </a>
+                <% } %>
 
-                                <div class="task_list row">
-                                    <% for (task of ttasks) {%>
-                                        <div class="task" style="background-color: <%= task.color%>">
-                                            <%= task.content %>
-
-                                                <div class="col-2 expense-date">
-                                                    <div class="expense-date__month">
-                                                        <%= task.month%>
-                                                    </div>
-                                                    <div class="expense-date__year">
-                                                        <%= task.year%>
-                                                    </div>
-                                                    <div class="expense-date__day">
-                                                        <%= task.dayName%>
-                                                    </div>
-                                                </div>
-                                                <div class="clo-2 float-right">
-                                                <a style="text-decoration:none;"
-                                                    href="tasks/delete/<%= task._id%>">
-                                                    <i class="fa-solid fa-xmark fa-sm"></i>
-                                                </a>
-                                                </div>
-                                                <div class="col2">
-
-                                                <% if (!task.isCompleted) {%>
-                                                    <a style="text-decoration:none;"
-                                                        href="tasks/complete/<%= task._id%>">
-                                                        <i class="fa-solid fa-check fa-sm"></i>
-                                                    </a>
-                                                    <% } %>
-                                                </div>
+                <a style="text-decoration:none;" href="tasks/delete/<%= task._id%>">
+                    <i class="fa-solid fa-xmark fa-sm"></i>
+                </a>
 
 
 
-
-
-                                        </div>
-                                        <% } %>
-                                </div>
-
-                                <% } %>
-                            </div>
-                        </div>
-                    </div>
-
-
+                
             </div>
+            
+            
+            
+            
+                </div>
+                <% } %>
+              </div>
+
+              <% } %>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

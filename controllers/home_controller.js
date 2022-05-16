@@ -7,7 +7,7 @@ module.exports.home = async function(req, res){
         return res.redirect('/users/sign-in')
     }
 
-    let tasks = await Task.find({user:req.user.id});
+    let tasks = await Task.find({user:req.user.id}).sort('-day').sort('-priority');
     // console.log(tasks);
     let rtasks = [];
     let ctasks = [];
