@@ -1,6 +1,8 @@
 #layout-footer{
+    height: 12vh;
+    margin-bottom: 0 !important;
+  
     color: white;
-    margin-top: 10px;
     a{
         color: white;
         text-decoration: none;
@@ -9,8 +11,17 @@
     background: grey;
     padding: 5px 10px;
     display: flex;
-    justify-content: flex-start;
 
+    justify-content: space-around;
+    div{
+        justify-self:baseline;
+        justify-content: center;
+        .mi{
+            vertical-align: middle;
+            margin: 2px 3px;
+            padding: 3px 2px;
+        }
+    }
     .footer-nav{
         ul{
             list-style: none;

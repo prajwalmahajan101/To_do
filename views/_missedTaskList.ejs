@@ -1,8 +1,7 @@
-<%if (tasks.length>0){%>
-
+<%if (mtasks.length>0){%>
     <div class="task_list min-he">
-        <% for (task of tasks) {%>
-            <div class="task" style="background-color: whitesmoke; color:<%= task.color%>">
+        <% for (task of mtasks) {%>
+            <div class="task" style="background-color: whitesmoke; color:black">
                 
                     <div class="expense-date">
                         <div class="expense-date__month">
@@ -45,4 +44,12 @@
             <% } %>
     </div>
 
-    <% } %>
+
+
+
+<% }else {%>
+        <div class="text-center m-3 ">
+            <i class="fa-solid fa-trophy fa-2xl"></i>
+            Hurry You Don't Have Any Missed Task
+        </div>
+<% } %>

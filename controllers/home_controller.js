@@ -9,15 +9,21 @@ module.exports.home = async function(req, res){
 
     let tasks = await Task.find({user:req.user.id}).sort('-day').sort('-priority');
     // console.log(tasks);
+    const format = (data) =>{
+        if(data>9) return data;
+        else return '0'+data;
+    }
     let rtasks = [];
     let ctasks = [];
     let Ttasks = [];
+    let mtasks = [];
     let totalPoints =0;
     let TtotalPoints =0;
     let TcomPoints =0;
     let comPoints = 0;
     let date = new Date;
-    let Qday = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+    let Qday = date.getFullYear()+"-"+format(date.getMonth()+1)+"-"+format(date.getDate());
+
     for (let task of tasks){
         const month = task.day.toLocaleString('en-US',{month :'long'});
         const year = task.day.getFullYear();
@@ -26,7 +32,10 @@ module.exports.home = async function(req, res){
         task.year = year;
         task.dayName = day;
 
-        let d = task.day.getFullYear()+"-"+task.day.getMonth()+"-"+task.day.getDate();
+        let d = task.day.getFullYear()+"-"+format(task.day.getMonth()+1)+"-"+format(task.day.getDate());
+        if(d<Qday){
+            mtasks.push(task);
+        }
         if (d==Qday) {
             Ttasks.push(task);
             TtotalPoints+=parseInt(task.priority);
@@ -41,7 +50,7 @@ module.exports.home = async function(req, res){
         if(task.priority==1) task.color ='aqua';
         else if(task.priority==2) task.color='green';
         else task.color = 'red';
-        if(task.isCompleted) task.color="grey";
+        if(task.isCompleted) task.color='';
     }
    let ans = ((comPoints*1.0)/totalPoints)*100;
 //    console.log(ans);
@@ -59,6 +68,7 @@ module.exports.home = async function(req, res){
         ttasks:Ttasks,
         comPer:ans,
         tcomPer:ans2,
+        mtasks:mtasks,
 
     })
 }

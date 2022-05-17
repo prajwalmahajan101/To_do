@@ -2,7 +2,7 @@
 
     <div class="task_list">
         <% for (task of ctasks) {%>
-            <div class="task" style="background-color: <%= task.color%>">
+            <div class="task" style="background-color: whitesmoke; color:<%= task.color%>">
 
                 
                 <div class="expense-date">
@@ -43,4 +43,11 @@
             <% } %>
     </div>
 
-    <% } %>
+
+<% }else {%>
+    <div class="text-center m-3 ">
+        <i class="fa-solid fa-trophy fa-2xl"></i>
+        Get Fast To Work You Don't Have Completed Any Task
+    </div>
+
+<% } %>

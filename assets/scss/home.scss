@@ -1,6 +1,6 @@
 .task_list {
     width: 100%;
-    background-color: aquamarine;
+    background-color: whitesmoke;
     padding: 3px 3px 3px 3px;
     max-height: 80vh;
     overflow-y: scroll;
@@ -34,4 +34,8 @@
     border: 2px solid;
     box-shadow: 10px 10px 8px #888888;
 
+}
+
+.meta{
+    min-height: 50vh;
 }

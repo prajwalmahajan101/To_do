@@ -2,8 +2,9 @@
   <div class="row justify-content-center">
     <div class="col-9 mt-2">
       <h2 class="text-center mt-2 mb-2">Today's Task</h2>
-
+      
       <div class="card">
+        <%if (ttasks.length>0){%>
         <h3 class="text-center mt-2 mb-2">Today's Task Progress</h3>
 
         <div class="progress m-3" style="height: 20px">
@@ -19,7 +20,7 @@
           </div>
         </div>
 
-        <%if (ttasks.length>0){%>
+        
         <div class="container justify-content-center">
           <div class="row justify-content-center">
             <div class="col-10">
@@ -27,7 +28,7 @@
                 <% for (task of ttasks) {%>
                 <div
                   class="task"
-                  style="background-color: <%= task.color%>">
+                  style="background-color: whitesmoke; color:<%= task.color%>">
 
 
                   <div class="expense-date">
@@ -70,10 +71,23 @@
                 <% } %>
               </div>
 
-              <% } %>
+              
             </div>
           </div>
         </div>
+
+        <% }else {%>
+          <div class="text-center m-3 ">
+            <i class="fa-solid fa-trophy fa-2xl"></i>
+            Congratulations You Don't Have Any Task Today
+          </div>
+
+
+
+
+        <% } %>
+
+
       </div>
     </div>
   </div>
